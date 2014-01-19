@@ -1,0 +1,50 @@
+<%= form_for @tool, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title_link, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title_link, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :owned_by, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :owned_by, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :purpose, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :purpose, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :added_by, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :added_by, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :added_on, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :added_on, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :outdated, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :outdated, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tools_path, :class => 'btn' %>
+  </div>
+<% end %>

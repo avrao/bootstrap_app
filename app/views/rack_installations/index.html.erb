@@ -1,0 +1,48 @@
+<%- model_class = RackInstallation -%>
+<div class="page-header">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+</div>
+<table class="table table-striped sortable">
+  <thead>
+    <tr>
+      <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:title_link) %></th>
+      <th><%= model_class.human_attribute_name(:owned_by) %></th>
+      <th><%= model_class.human_attribute_name(:purpose) %></th>
+      <th><%= model_class.human_attribute_name(:added_by) %></th>
+      <th><%= model_class.human_attribute_name(:added_on) %></th>
+      <th><%= model_class.human_attribute_name(:outdated) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rack_installations.each do |rack_installation| %>
+      <tr>
+        <!--<td><%= link_to rack_installation.id, rack_installation_path(rack_installation) %></td>-->
+        <td><%= rack_installation.title %></td>
+        <td><%= rack_installation.title_link %></td>
+        <td><%= rack_installation.owned_by %></td>
+        <td><%= rack_installation.purpose %></td>
+        <td><%= rack_installation.added_by %></td>
+        <td><%= rack_installation.added_on %></td>
+        <td><%= rack_installation.outdated %></td>
+        <td><%=l rack_installation.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_rack_installation_path(rack_installation), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      rack_installation_path(rack_installation),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_rack_installation_path,
+            :class => 'btn btn-primary' %>
