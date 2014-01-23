@@ -1,3 +1,4 @@
+
 <%- model_class = Document -%>
 <div class="page-header">
   <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
@@ -9,8 +10,8 @@
       <!--<th><%= model_class.human_attribute_name(:id) %></th>-->
       <th><%= model_class.human_attribute_name(:title) %></th>
      <!-- <th><%= model_class.human_attribute_name(:title_link) %></th>-->
-      <th class="sorttable_nosort"><%= model_class.human_attribute_name(:owned_by) %></th>
-      <th class="sorttable_nosort"><%= model_class.human_attribute_name(:purpose) %></th>
+      <th><%= model_class.human_attribute_name(:owned_by) %></th>
+      <th><%= model_class.human_attribute_name(:purpose) %></th>
       <th><%= model_class.human_attribute_name(:added_by) %></th>
       <th><%= model_class.human_attribute_name(:added_on) %></th>
       <th><%= model_class.human_attribute_name(:outdated) %></th>

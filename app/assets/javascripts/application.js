@@ -17,11 +17,30 @@
 //= require_tree .
 //= require sorttable.js
 
+/*var newTableObject = document.getElementById("#mytable");
+sorttable.makeSortable(newTableObject);*/
 
-/*
-//This code makes the th tag clickable and looks at the data-link tag we set for the url
+
+/*//This code makes the th tag clickable and looks at the data-link tag we set for the url
 $(document).ready(function(){
     $('.multiSort').click(function(){
         window.location.href = $(this).data('link');
+    });
+});*/
+/*$(document).ready(function()
+    {
+        $("#myTable").sortable();
+    }
+);*/
+/*
+$(document).ready(function() {
+    $("table").sortable();
+    $("#trigger-link").click(function() {
+        // set sorting column and direction, this will sort on the first and third column the column index starts at zero
+        var sorting = [[0,0],[2,0]];
+        // sort on the first column
+        $("table").trigger("sorton",[sorting]);
+        // return false to stop default link action
+        return false;
     });
 });*/
